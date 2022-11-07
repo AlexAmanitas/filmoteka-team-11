@@ -1,11 +1,13 @@
 {{!-- {{#each this}} --}}
 <li class='collection__item'>
   <a href='' class='card__link' value='{{id}}'>
+    <div class="img__wrap">
     <img
       src='https://image.tmdb.org/t/p/w500{{poster_path}}'
       alt='poster path of {{title}}'
       class='card__img'
     />
+    </div>
     <b class='card__title'>{{title}}</b>
     <div class='card__wrap'>
       <p class='card__genres'>{{genre_ids}}</p>

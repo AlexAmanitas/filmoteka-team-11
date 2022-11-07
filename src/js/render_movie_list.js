@@ -13,3 +13,5 @@ export default function render(movieArr) {
   // console.log(markup);
   refs.filmList.insertAdjacentHTML('afterbegin', markup);
 }
+
+export {movieArr} 

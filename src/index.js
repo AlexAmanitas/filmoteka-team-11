@@ -5,7 +5,7 @@ import renderMovieList from './js/render_movie_list';
 import idToGenre from './js/idToGenre';
 import renderModal from './js/render_film_modal';
 // import { renderM } from './js/example';
-
+import './js/pagination.js';
 // renderMovieList();
 // const apiRequest = new FilmApiService();
 

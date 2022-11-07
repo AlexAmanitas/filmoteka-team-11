@@ -30,6 +30,9 @@
     padding-bottom: 60px;
   }
 }
+.img__wrap {
+  overflow: hidden;
+}
 
 .card__img {
   width: 280px;
@@ -67,6 +70,7 @@
   @media screen and (min-width: $desktop) {
     justify-content: center;
     align-items: center;
+    
     max-width: 1280px;
     margin-bottom: 60px;
   }
