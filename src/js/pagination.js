@@ -15,6 +15,7 @@ const leftArrowRef = document.querySelector('.arrow-left');
 const prevDotsRef = document.querySelector('#previous');
 const afterDotsRef = document.querySelector('#after');
 
+const gallery = document.querySelector('.collection');
 paginationRef.addEventListener('click', onPaginationClick);
 
 let currentPage = 1;
@@ -110,9 +111,9 @@ function onPaginationClick(event) {
     gallery.innerHTML = '';
     window.scrollTo({ top: 0, behavior: 'smooth' });
     
-   
-    movieArr(currentPage).then(res => {
-        render(res)});
+    console.log('currentPage: ',currentPage);
+    // movieArr(currentPage).then(res => {
+    //     render(res)});
   }
 }
 

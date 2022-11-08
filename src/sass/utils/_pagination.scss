@@ -5,11 +5,11 @@
     align-items: center;
   
     @media screen and (min-width: 320px) and (max-width: 767px) {
-      padding: 40px 0;
+      padding: 0px 0;
     }
   
     @media screen and (min-width: 768px) {
-      padding: 50px 0 60px 0;
+      padding: 0px 0 0px 0;
     }
   }
   
@@ -67,3 +67,12 @@
   .arrow-right {
     background-image: url("../images/arrow-right.svg");
   }
+
+  // .icon-arrow-right {
+  //   stroke: #000;
+  //   fill: #000;
+  // }
+  // .icon-arrow-left {
+  //   stroke: #000;
+  //   fill: #000;
+  // }
