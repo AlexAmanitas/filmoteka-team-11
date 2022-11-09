@@ -1,5 +1,5 @@
 body.modal-open {
-  overflow: hidden;
+  overflow: scroll;
 }
 
 .modal-backdrop {
@@ -17,7 +17,9 @@ body.modal-open {
   transform: translate(-50%, -50%);
 
   transition: opacity 0.5s, visibility 0.5s;
+
 }
+
 
 .modal-backdrop.is-hidden {
   opacity: 0;
