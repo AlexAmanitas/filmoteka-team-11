@@ -34,6 +34,7 @@
 .card__img {
   width: 280px;
   height: 398px;
+  border-radius: 5px;
   transition: scale 200ms linear;
   @media screen and (min-width: $tablet) {
     width: 336px;
@@ -69,7 +70,6 @@
     align-items: center;
     max-width: 1280px;
     margin-bottom: 60px;
-
   }
 }
 
@@ -87,7 +87,6 @@
       margin-bottom: 20px;
     }
   }
-
 
   @media screen and (min-width: $tablet) {
     // flex-basis: calc(100% / 2 - 40px);
@@ -127,9 +126,10 @@
   overflow: hidden;
 }
 
-.collection__item:hover,
-.collection__item:focus {
-  box-shadow: rgba(0, 0, 0, 0.45) 5px 5px 15px;
+.card-img:hover,
+.card-img:focus {
+  transition: all 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  box-shadow: 15px 0 28px #00000040, 5px 0 10px #00000038;
 }
 
 .load-more:hover {
@@ -155,7 +155,6 @@
   box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.3),
     2px 1px 2px 1px rgba(0, 0, 0, 0.14), 1px 2px 1px -1px rgba(0, 0, 0, 0.12);
 }
-
 
 .visually-hidden {
   clip: rect(0 0 0 0);
@@ -193,4 +192,3 @@
   flex-direction: inherit;
   display: flex;
 }
-
