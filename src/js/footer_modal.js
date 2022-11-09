@@ -26,7 +26,6 @@ function onCloseBackdrop(e) {
   }
 }
 
-
 function onEscPress(e) {
   if (e.code === 'Escape') {
     onCloseBtn();
