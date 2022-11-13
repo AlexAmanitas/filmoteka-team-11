@@ -13,9 +13,16 @@ refs.headerLibrBtnQueue.addEventListener('click', onClickQueueBtn);
 
 function openModal(evt) {
   evt.preventDefault();
+  console.log(evt.target.nodeName);
+  if (evt.target.nodeName !== 'IMG') {
+    return;
+  }
+
   refs.addQueueBtn.addEventListener('click', onClickAddQueueBtn);
   refs.addWatchedBtn.addEventListener('click', onClickAddWatchedBtn);
   refs.closeModalBtn.addEventListener('click', closeModal);
+  document.body.addEventListener('keydown', onEscButton);
+  document.body.addEventListener('click', onBackdropClick);
   refs.backdrop.classList.remove('visually-hidden');
   const queue = JSON.parse(localStorage.getItem('queue'));
   const watched = JSON.parse(localStorage.getItem('watched'));
@@ -59,10 +66,24 @@ function render(movie) {
   refs.modal.innerHTML = markup;
 }
 
-function closeModal() {
+function closeModal(evt) {
+  document.body.removeEventListener('keydown', onEscButton);
+  document.body.removeEventListener('click', onBackdropClick);
+
   refs.backdrop.classList.add('visually-hidden');
   refs.addQueueBtn.removeEventListener('click', onClickAddQueueBtn);
   refs.addWatchedBtn.removeEventListener('click', onClickAddWatchedBtn);
+}
+function onBackdropClick(evt) {
+  if (evt.target.classList.contains('backdrop')) {
+    closeModal();
+  }
+}
+
+function onEscButton(evt) {
+  if (evt.code === 'Escape') {
+    closeModal();
+  }
 }
 
 function onClickAddWatchedBtn(evt) {
