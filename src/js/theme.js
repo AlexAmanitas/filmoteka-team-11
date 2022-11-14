@@ -1,34 +1,32 @@
-import { refs } from './refs';
+let changeThemeButtons = document.querySelectorAll('.changeTheme'); 
+let body = document.querySelector("body");
 
-refs.themeToggle.addEventListener('click', onClick);
 
-function onClick(evt) {
-  console.log(evt);
-  setDarkTheme();
-}
+let count = 0;
 
-function setLightTheme() {
-  refs.body.classList.add('light');
-  // document.documentElement.style.setProperty('--bg-text', '#202025');
-  // document.documentElement.style.setProperty('--modal-text-color', '#5f6775');
-  // saveThemeFavorites('Light');
-}
-function setDarkTheme() {
-  refs.body.classList.toggle('dark');
-  // document.documentElement.style.setProperty('--bg-text', '#FCFCFC');
-  // document.documentElement.style.setProperty('--modal-text-color', '#FCFCFC');
-  // saveThemeFavorites('Dark');
-}
+changeThemeButtons.forEach(button => {
+    button.addEventListener('click', function () {
+        // setTheme(target.checked ? 'Dark' : 'Light')
+        if (count % 2 == 0) {
+            body.style.setProperty('background-color', '#202025');
+            count++;
+        } else { 
+            body.style.setProperty('background-color', '#FCFCFC');
+            count++;
+        }
+        let theme = this.dataset.theme; 
+        applyTheme(theme); 
+    });
 
-export function setTheme() {
-  switch (theme) {
-    case 'Light':
-      el.toggleSwitch.checked = false;
-      setLightTheme();
-      break;
-    case 'Dark':
-      el.toggleSwitch.checked = true;
-      setDarkTheme();
-      break;
-  }
+});
+
+function applyTheme(themeName) {
+    document.querySelector('[title="theme"]'); 
+    changeThemeButtons.forEach(button => {
+        button.style.display = 'block'; 
+    });
+    document.querySelector(`[data-theme="${themeName}"]`).style.display = 'none';
+
 }
+ 
+console.log('applyTheme');
